@@ -28,6 +28,8 @@
 # town = input()
 
 # print('\nYou are {0} {1}, a {2}-years student from {3}'.format(fstName,lstName,age,town), end='.')
+# print('\nYou are {} {}, a {}-years student from {}'.format(fstName,lstName,age,town), end='.')
+# print(f'\nYou are {fstName} {lstName}, a {age}-years student from {town}', end='.')
 ######################
 
 # raising the degree
@@ -65,3 +67,12 @@
 # \b = delete last symbol
 
 # print('ab\bc')
+######################
+
+# закръгляне на числа и други
+# import math
+# x = math.ceil(4.39)
+# y = math.floor(4.39)
+
+# print(x,y)
+# print(max(x,y))
