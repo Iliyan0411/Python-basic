@@ -56,6 +56,9 @@ def findMax(arr):
     
     return max
 
+def mySwap(a, b):
+    return b, a
+
 
 
 def main():
@@ -66,7 +69,13 @@ def main():
 
     # arr = [1,2,3,5,8,9,6,2,4,10,4]
     # print(findMax (arr))
-    print (4)
+
+    a = 5
+    b = 10
+
+    a, b = mySwap(a, b)
+
+    print (a, b)
 
 
 main()
