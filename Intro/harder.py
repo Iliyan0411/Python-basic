@@ -36,13 +36,13 @@ def decodeString(s):
     return res
 #------------------------------------------------------
 
-def fib_iter (n, prev, curr):
-    if n == 0: return prev
-    if n == 1: return curr
-
-    return fib_iter(n-1, curr, prev+curr)
-
 def fibbonachi (n):
+    def fib_iter(n, prev, curr):
+        if n == 0: return 0
+        if n == 1: return curr
+
+        return fib_iter(n-1, curr, prev+curr)
+
     return fib_iter(n, 0, 1)
 #------------------------------------------------------
 def printArr(arr):
@@ -64,18 +64,17 @@ def mySwap(a, b):
 def main():
     # print(encodeString (input('Enter string: ')))
     # print(decodeString (input('Enter string: ')))
-    # print(fibbonachi (50))
+    print(fibbonachi (5))
     # print(printArray ())
 
     # arr = [1,2,3,5,8,9,6,2,4,10,4]
     # print(findMax (arr))
 
-    a = 5
-    b = 10
+    # a, b = 5, 10
+    # a, b = mySwap(a, b)
+    # print (a, b)
 
-    a, b = mySwap(a, b)
-
-    print (a, b)
+    # print (" ")
 
 
 main()
