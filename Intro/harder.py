@@ -36,14 +36,12 @@ def decodeString(s):
     return res
 #------------------------------------------------------
 
-def fibbonachi (n):
-    def fib_iter(n, prev, curr):
-        if n == 0: return 0
-        if n == 1: return curr
+def fibbonachi (n, prev=0, curr=1):
+   
+    if n == 0: return 0
+    if n == 1: return curr
 
-        return fib_iter(n-1, curr, prev+curr)
-
-    return fib_iter(n, 0, 1)
+    return fibbonachi(n-1, curr, prev+curr)
 #------------------------------------------------------
 def printArr(arr):
     for i in range(0, len(arr)): print(arr[i], end=' ')
