@@ -9,20 +9,29 @@ def guessNumber():
         if x < minNum or x > maxNum: continue
 
         if x == num:
-            print('Congratulations, you win!\n')
+            print('\nCongratulations, you win!\n')
             return
-        elif x < num:
-            counter = counter + 1
-            minNum = x + 1
-        else:
-            counter = counter + 1
-            maxNum = x - 1
+        elif x < num: minNum = x + 1
+        else: maxNum = x - 1
 
-    print(f'You lose! The correct number is {num}\n')
+        counter = counter + 1
+
+    print(f'\nYou lose! The correct number is {num}\n')
 
 
 def main():
-    guessNumber()
+    while True:
+        print('[1] Play')
+        print('[2] Exit')
+
+        choice = 0
+        while choice < 1 or choice > 2:
+            choice = int(input('-> '))
+
+        if choice == 1: 
+            print(' ')
+            guessNumber()
+        else: return
 
 
 main()
