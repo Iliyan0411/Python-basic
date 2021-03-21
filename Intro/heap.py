@@ -59,6 +59,9 @@ def main():
     arr.append(h.pop())
     arr.append(h.pop())
     arr.append(h.pop())
+    arr.append(h.pop())
+    arr.append(h.pop())
+    arr.append(h.pop())
 
     print(arr)
 
