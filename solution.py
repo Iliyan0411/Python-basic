@@ -1,29 +1,46 @@
+# def all_transported(arr):
+#     for elem in arr:
+#         if arr == False:
+#             return False
+
+#     return True
+
 
 def raft(K, weights):
-    total = 0
-    for w in weights:
-        total += w
+    min = max(weights)
 
-    transported = []
-    for i in range(0, len(weights)):
-        transported.append(False)
-
-    min_capacity = int(total / K) + 1
-
-    counter = 0
+    groups = []
     for i in range(0, K):
-        temp = 0
-        for j in range(0, len(weights)):
-            if transported[j] == False and temp + weights[j] <= min_capacity:
-                temp += weights[j]
-                transported[j] = True
-        
-        counter += 1
+        groups.append([])
 
-    return min_capacity
+    gc = 0
+    i = 0
+    while i < len(weights):
+        if weights[i] + sum(groups[gc]) <= min:
+            groups[gc].append(weights[i])
+            # transported[i] = True
+            i += 1
+        else:
+            if gc < K - 1:
+                gc += 1
+            else:
+                minIndex = 0
+                for j in range(1, K):
+                    if sum(groups[j]) < sum(groups[minIndex]):
+                        minIndex = j
+                
+                groups[minIndex].append(weights[i])
+                min = sum(groups[minIndex])
+                gc = 0
+                i += 1
 
+    maxIndex = 0
+    for j in range(1, K):
+        if sum(groups[j]) > sum(groups[maxIndex]):
+            maxIndex = j
 
-
+    return sum(groups[minIndex])
+                    
 
 
 def main():
@@ -32,8 +49,7 @@ def main():
 
     weights = []
     for i in range(0, N):
-        weight = int(input())
-        weights.append(weight)
+        weights.append(int(input()))
 
     weights.sort(reverse=True)
     
