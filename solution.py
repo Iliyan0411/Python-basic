@@ -31,7 +31,7 @@ def raft(K, weights):
         if sum(groups[j]) > sum(groups[maxIndex]):
             maxIndex = j
 
-    return sum(groups[minIndex])
+    return sum(groups[maxIndex])
                     
 
 
