@@ -1,10 +1,3 @@
-# def all_transported(arr):
-#     for elem in arr:
-#         if arr == False:
-#             return False
-
-#     return True
-
 
 def raft(K, weights):
     min = max(weights)
@@ -18,7 +11,6 @@ def raft(K, weights):
     while i < len(weights):
         if weights[i] + sum(groups[gc]) <= min:
             groups[gc].append(weights[i])
-            # transported[i] = True
             i += 1
         else:
             if gc < K - 1:
