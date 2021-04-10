@@ -11,14 +11,10 @@ def similar_numbers(arr):
         if numbers[i] == numbers[i + 1]:
             finded = numbers[i]
 
-    counter = 0
-    for num in arr:
-        if num // 100 == finded:
-            counter += 1
-        if counter == 2:
-            return True
-    
-    return False
+    if finded == None:
+        return False
+
+    return True
 
 
 arr = [9104, 7208, 3015, 7241]
