@@ -6,15 +6,9 @@ def similar_numbers(arr):
 
     numbers.sort()
 
-    finded = None
     for i in range(0, len(numbers)-1):
         if numbers[i] == numbers[i + 1]:
-            finded = numbers[i]
-
-    if finded == None:
-        return False
-
-    return True
+            return True
 
 
 arr = [9104, 7208, 3015, 7241]
