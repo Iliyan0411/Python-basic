@@ -23,9 +23,11 @@ def quickSort(arr, low, high):
 
 
 def main():
-    arr = [10, 7, 8, 9, 1, 5] 
+    arr = [8,2,1,1,1] 
     
     n = len(arr) 
-    quickSort(arr, 0, n-1) 
+    partition(arr, 0, n-1) 
     
-    print(arr[0])
+    print(arr)
+
+main()
